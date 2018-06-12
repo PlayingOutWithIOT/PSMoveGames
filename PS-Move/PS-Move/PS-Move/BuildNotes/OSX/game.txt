@@ -1,0 +1,54 @@
+5461.28, cube, Texture
+1542.92, shader, Not included in size list
+1186.54, itsbomb, Sound (channels=0)
+1024.05, front, Texture
+1024.05, white3noztest, Texture
+1024.05, up, Texture
+1024.05, back, Texture
+1024.05, right, Texture
+1024.05, left, Texture
+1024.05, white3, Texture
+413.57, bomb1, Sound (channels=0)
+350.39, 1, Sound (channels=0)
+263.87, bomb3, Sound (channels=0)
+256.05, vera_0, Texture
+250.03, throw, Sound (channels=0)
+228.44, bomb8, Sound (channels=0)
+219.62, bomb6, Sound (channels=0)
+209.68, 2, Sound (channels=0)
+195.81, 9, Sound (channels=0)
+190.13, bomb9, Sound (channels=0)
+163.38, bomb4, Sound (channels=0)
+150.77, bomb5, Sound (channels=0)
+149.44, 5, Sound (channels=0)
+142.84, 10, Sound (channels=0)
+140.08, 6, Sound (channels=0)
+132.36, bomb7, Sound (channels=0)
+124.15, 3, Sound (channels=0)
+120.09, bomb2, Sound (channels=0)
+116.09, 4, Sound (channels=0)
+115.29, 7, Sound (channels=0)
+89.42, howl, Sound (channels=0)
+84.58, 8, Sound (channels=0)
+64.39, vera, Userdata
+12.13, cube, Not included in size list
+10.39, vera, Font
+2.52, PoNoCoU0, Not included in size list
+0.33, cube, Not included in size list
+0.33, IndexBuffer, Not included in size list
+0.32, white2, Material
+0.32, cubelambert1, Material
+0.32, back, Material
+0.32, white3, Material
+0.32, up, Material
+0.32, front, Material
+0.32, left, Material
+0.32, right, Material
+0.32, white3noztest, Material
+0.30, white2, Texture
+0.08, CollisionMeshWin32, Not included in size list
+0.01, CAnalytical_, Not included in size list
+
+Main memory total 19558 KBytes
+Graphics total 12885 KBytes
+Sound total 5036 KBytes
