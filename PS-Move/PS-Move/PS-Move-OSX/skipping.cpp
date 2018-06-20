@@ -182,6 +182,28 @@ void Skipping::update()
         a++;
     }
     
+    static BtU32 count = 0;
+    BtBool bad = BtFalse;
+    
+    if( down[0] && !jump )
+    {
+        count++;
+    }
+    else{
+        count = 0;
+    }
+    if( down[2] && !jump )
+    {
+        count++;
+    }
+    else{
+        count = 0;
+    }
+    if( count > 10 )
+    {
+        bad = BtTrue;
+    }
+    
     // Set the lights
     for( BtU32 i=0; i<numControllers; i++ )
     {
@@ -200,7 +222,7 @@ void Skipping::update()
         {
             psmove_set_leds( move, 0, 0, 255 );
             
-            if( jump )
+            if( bad )
             {
                 psmove_set_leds( move, 255, 0, 0 );
             }
