@@ -112,7 +112,7 @@ void Skipping::update()
             if( i == 1 )
             {
                 v3Grav.z -= 1.0f;
-                if( MtSqrt( (v3Grav.x * v3Grav.x) + (v3Grav.y * v3Grav.y) + (v3Grav.z * v3Grav.z) ) > 1.0f )
+                if( MtSqrt( (v3Grav.x * v3Grav.x) + (v3Grav.y * v3Grav.y) + (v3Grav.z * v3Grav.z) ) > 2.0f )
                 {
                     jump = BtTrue;
                     int a=0;
@@ -159,31 +159,27 @@ void Skipping::update()
         }
     }
     
-    BtBool up = BtFalse;
-
-    if( currHeight[0] > avHeight[0] * 1.30f )
+    // Is tipping down
+    BtBool down[3];
+    
+    for( BtU32 i=0; i<3; i++ )
     {
-        if( currHeight[2] > avHeight[2] * 1.30f )
+        down[i] = BtFalse;
+        
+        MtMatrix4 m4Transform( ShIMU::GetQuaternion(i) );
+        
+        MtVector3 zaxis = (MtVector3( 0, 0, 1 ) * m4Transform );
+        
+        if( zaxis.y < 0 )
         {
-            up = BtTrue;
-            int a=0;
-            a++;
+            down[i] = BtTrue;
         }
     }
-    
+
     if( jump )
     {
         int a=0;
         a++;
-    }
-    
-    if( up )
-    {
-        if( jump == BtFalse )
-        {
-            int a=0;
-            a++;
-        }
     }
     
     // Set the lights
@@ -194,15 +190,28 @@ void Skipping::update()
         // Setup the skipping rope
         if( i == 0 )
         {
-            psmove_set_leds( move, 0, 255, 0 );
+            psmove_set_leds( move, 0, 255, 255 );
+            if( down[i] )
+            {
+                psmove_set_leds( move, 0, 255, 0 );
+            }
         }
         if( i == 1 )
         {
             psmove_set_leds( move, 0, 0, 255 );
+            
+            if( jump )
+            {
+                psmove_set_leds( move, 255, 0, 0 );
+            }
         }
         if( i == 2 )
         {
-            psmove_set_leds( move, 0, 255, 0 );
+            psmove_set_leds( move, 0, 255, 255 );
+            if( down[i] )
+            {
+                psmove_set_leds( move, 0, 255, 0 );
+            }
         }
         
         // Respond to the buttons
