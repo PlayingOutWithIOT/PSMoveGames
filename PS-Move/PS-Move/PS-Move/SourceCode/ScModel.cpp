@@ -35,9 +35,13 @@
 void ScModel::Setup( BaArchive *pGameArchive )
 {
 	// Cache our model
-	m_pCube = pGameArchive->GetNode("cube");
-	HlModel::SetSortOrders(m_pCube, ModelSortOrder);
-	
+	m_pCube1 = pGameArchive->GetNode("cube");
+    m_pCube2 = m_pCube1->GetDuplicate();
+    m_pCube3 = m_pCube1->GetDuplicate();
+    HlModel::SetSortOrders(m_pCube1, ModelSortOrder);
+    HlModel::SetSortOrders(m_pCube2, ModelSortOrder);
+    HlModel::SetSortOrders(m_pCube3, ModelSortOrder);
+    
 	// Cache the main shader
 	m_pShader = pGameArchive->GetShader( "shader" );
 }
@@ -47,14 +51,44 @@ void ScModel::Setup( BaArchive *pGameArchive )
 
 void ScModel::Update( RsCamera &camera )
 {
-	if (m_pCube)
+    MtMatrix4 m4Translate;
+    
+	if (m_pCube1)
 	{
+        MtVector3 v3Position = ShIMU::GetPosition(0);
+        v3Position += MtVector3( -10.0f, 0, 10.0f );
+        m4Translate.SetTranslation( v3Position );
+
         MtQuaternion quaternion = ShIMU::GetQuaternion(0);
         //quaternion.SetIdentity();
         MtMatrix4 m4Transform( quaternion );
-		m_pCube->SetLocalTransform(m4Transform);
-		m_pCube->Update();
+        m_pCube1->SetLocalTransform( m4Transform * m4Translate );
+		m_pCube1->Update();
 	}
+    if (m_pCube2)
+    {
+        MtVector3 v3Position = ShIMU::GetPosition(1);
+        v3Position += MtVector3( 0, 0, 10.0f );
+        m4Translate.SetTranslation( v3Position );
+        
+        MtQuaternion quaternion = ShIMU::GetQuaternion(1);
+        //quaternion.SetIdentity();
+        MtMatrix4 m4Transform( quaternion );
+        m_pCube2->SetLocalTransform( m4Transform * m4Translate );
+        m_pCube2->Update();
+    }
+    if (m_pCube3)
+    {
+        MtVector3 v3Position = ShIMU::GetPosition(2);
+        v3Position += MtVector3( 10, 0, 10.0f );
+        m4Translate.SetTranslation( v3Position );
+        
+        MtQuaternion quaternion = ShIMU::GetQuaternion(2);
+        //quaternion.SetIdentity();
+        MtMatrix4 m4Transform( quaternion );
+        m_pCube3->SetLocalTransform( m4Transform * m4Translate );
+        m_pCube3->Update();
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -73,11 +107,18 @@ void ScModel::Render( RsCamera &camera )
 	// Apply the shader
 	m_pShader->Apply();
 
-	if (m_pCube)
+	if (m_pCube1)
 	{
-		m_pCube->Render();
+		m_pCube1->Render();
 	}
-
+    if (m_pCube2)
+    {
+        m_pCube2->Render();
+    }
+    if (m_pCube3)
+    {
+        m_pCube3->Render();
+    }
     //MtVector2 v2Position( 0, 0 );
     //BtChar text[32];
     //sprintf( text, "Hello World!" );

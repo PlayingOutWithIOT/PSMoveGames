@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3A1598EF11B9DE37001E7AB5 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1598EE11B9DE37001E7AB5 /* OpenGL.framework */; };
 		3A15990711B9DE6C001E7AB5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A15990611B9DE6C001E7AB5 /* QuartzCore.framework */; };
-		5A2C4D4220CFCEAD001ADBEF /* fft.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5A2C4D4120CFCEAD001ADBEF /* fft.cpp */; };
 		7B1BDAFA1F5F4E740030E0D2 /* adler32.c in Sources */ = {isa = PBXBuildFile; fileRef = 7B1BDAE01F5F4E740030E0D2 /* adler32.c */; };
 		7B1BDAFB1F5F4E740030E0D2 /* compress.c in Sources */ = {isa = PBXBuildFile; fileRef = 7B1BDAE11F5F4E740030E0D2 /* compress.c */; };
 		7B1BDAFC1F5F4E740030E0D2 /* crc32.c in Sources */ = {isa = PBXBuildFile; fileRef = 7B1BDAE21F5F4E740030E0D2 /* crc32.c */; };
@@ -103,6 +102,9 @@
 		7B231AF71F99ECE3008883E4 /* ScRenderSkybox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B231A0C1F99ECE3008883E4 /* ScRenderSkybox.cpp */; };
 		7B25D3F41F8ED1A00004546A /* RsColourImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B25D3F31F8ED19F0004546A /* RsColourImpl.cpp */; };
 		7B3FE35120C942B000347EF8 /* itsabomb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B3FE34F20C942B000347EF8 /* itsabomb.cpp */; };
+		7B681A3A20DA7FF300281C4A /* fft.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B681A3920DA7FF200281C4A /* fft.cpp */; };
+		7B681A3D20DA802F00281C4A /* skipping.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B681A3B20DA802F00281C4A /* skipping.cpp */; };
+		7B681A4420DA81FA00281C4A /* MadgwickAHRS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B681A4220DA81FA00281C4A /* MadgwickAHRS.cpp */; };
 		7B78DBA41AEE946E008E472D /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B78DBA31AEE946E008E472D /* OpenAL.framework */; };
 		7B81A93C20C95469002107F9 /* testcontrollers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B81A93B20C95469002107F9 /* testcontrollers.cpp */; };
 		7BAF25911F5EC6D900C59E53 /* GLEssentialsFullscreenWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAF258A1F5EC6D900C59E53 /* GLEssentialsFullscreenWindow.m */; };
@@ -258,8 +260,6 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		3A1598EE11B9DE37001E7AB5 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		3A15990611B9DE6C001E7AB5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		5A2C4D4020CFCEAD001ADBEF /* fft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fft.h; path = ../../../../GameFramework_ThirdParty/FFT/fft.h; sourceTree = "<group>"; };
-		5A2C4D4120CFCEAD001ADBEF /* fft.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = fft.cpp; path = ../../../../GameFramework_ThirdParty/FFT/fft.cpp; sourceTree = "<group>"; };
 		7B1BDAA61F5F42660030E0D2 /* PSMoveOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PSMoveOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B1BDAAC1F5F43170030E0D2 /* game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
 		7B1BDAAD1F5F43170030E0D2 /* GaProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaProject.h; sourceTree = "<group>"; };
@@ -396,6 +396,12 @@
 		7B25D3F31F8ED19F0004546A /* RsColourImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RsColourImpl.cpp; path = ../../../GameFramework/ImplOSX/RsColourImpl.cpp; sourceTree = "<group>"; };
 		7B3FE34F20C942B000347EF8 /* itsabomb.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = itsabomb.cpp; sourceTree = "<group>"; };
 		7B3FE35020C942B000347EF8 /* itsabomb.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = itsabomb.hpp; sourceTree = "<group>"; };
+		7B681A3820DA7FF200281C4A /* fft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fft.h; sourceTree = "<group>"; };
+		7B681A3920DA7FF200281C4A /* fft.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fft.cpp; sourceTree = "<group>"; };
+		7B681A3B20DA802F00281C4A /* skipping.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = skipping.cpp; sourceTree = "<group>"; };
+		7B681A3C20DA802F00281C4A /* skipping.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = skipping.hpp; sourceTree = "<group>"; };
+		7B681A4220DA81FA00281C4A /* MadgwickAHRS.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MadgwickAHRS.cpp; path = ../ThirdParty/MadgwickAHRS.cpp; sourceTree = "<group>"; };
+		7B681A4320DA81FA00281C4A /* MadgwickAHRS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MadgwickAHRS.h; path = ../ThirdParty/MadgwickAHRS.h; sourceTree = "<group>"; };
 		7B78DBA31AEE946E008E472D /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		7B81A90020C944E2002107F9 /* movegame.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = movegame.hpp; sourceTree = "<group>"; };
 		7B81A90120C95082002107F9 /* testControllers.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = testControllers.hpp; sourceTree = "<group>"; };
@@ -681,15 +687,6 @@
 				7B1BDAA71F5F42660030E0D2 /* Products */,
 			);
 			name = OSXGLEssentials;
-			sourceTree = "<group>";
-		};
-		5A2C4D3F20CFCE8C001ADBEF /* FFT */ = {
-			isa = PBXGroup;
-			children = (
-				5A2C4D4120CFCEAD001ADBEF /* fft.cpp */,
-				5A2C4D4020CFCEAD001ADBEF /* fft.h */,
-			);
-			path = FFT;
 			sourceTree = "<group>";
 		};
 		7B1BDAA71F5F42660030E0D2 /* Products */ = {
@@ -997,6 +994,16 @@
 			path = SourceCode;
 			sourceTree = "<group>";
 		};
+		7B681A3720DA7FF200281C4A /* FFT */ = {
+			isa = PBXGroup;
+			children = (
+				7B681A3820DA7FF200281C4A /* fft.h */,
+				7B681A3920DA7FF200281C4A /* fft.cpp */,
+			);
+			name = FFT;
+			path = ../../../GameFramework_ThirdParty/FFT;
+			sourceTree = "<group>";
+		};
 		7BAF255D1F5EC4E100C59E53 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1015,7 +1022,7 @@
 		7BAF255E1F5EC4EA00C59E53 /* GameFramework_ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
-				5A2C4D3F20CFCE8C001ADBEF /* FFT */,
+				7B681A3720DA7FF200281C4A /* FFT */,
 				7BE8B3D91F6286C600ABFF3C /* GLee */,
 				7BE8B3791F6285F500ABFF3C /* glew */,
 				7B1BDADF1F5F4E740030E0D2 /* ZLib */,
@@ -1042,6 +1049,10 @@
 		7BAF25851F5EC60500C59E53 /* PSMoveOSX */ = {
 			isa = PBXGroup;
 			children = (
+				7B681A4220DA81FA00281C4A /* MadgwickAHRS.cpp */,
+				7B681A4320DA81FA00281C4A /* MadgwickAHRS.h */,
+				7B681A3B20DA802F00281C4A /* skipping.cpp */,
+				7B681A3C20DA802F00281C4A /* skipping.hpp */,
 				7B3FE34F20C942B000347EF8 /* itsabomb.cpp */,
 				7B3FE35020C942B000347EF8 /* itsabomb.hpp */,
 				7B81A93B20C95469002107F9 /* testcontrollers.cpp */,
@@ -1792,6 +1803,7 @@
 				7BCB9AF51F8771F1008EAFFF /* FsFile.cpp in Sources */,
 				7BAF26BA1F5EC74F00C59E53 /* ShKeyboard.cpp in Sources */,
 				7B1FBAAE1F86D42A004A5226 /* BaArchiveImpl.cpp in Sources */,
+				7B681A3D20DA802F00281C4A /* skipping.cpp in Sources */,
 				7BAF26B91F5EC74F00C59E53 /* ShJoystick.cpp in Sources */,
 				7BCB9AFD1F8771F1008EAFFF /* MtQuad.cpp in Sources */,
 				7BAF27231F5EC7B900C59E53 /* tinyxml2.cpp in Sources */,
@@ -1852,7 +1864,8 @@
 				7BCB9AEE1F8771F1008EAFFF /* LBtString.cpp in Sources */,
 				7BCB9B0C1F8771F1008EAFFF /* RsResourceManager.cpp in Sources */,
 				7B1BDB041F5F4E740030E0D2 /* uncompr.c in Sources */,
-				5A2C4D4220CFCEAD001ADBEF /* fft.cpp in Sources */,
+				7B681A3A20DA7FF300281C4A /* fft.cpp in Sources */,
+				7B681A4420DA81FA00281C4A /* MadgwickAHRS.cpp in Sources */,
 				7BCB9B0D1F8771F1008EAFFF /* RsShader.cpp in Sources */,
 				7BAF26B81F5EC74F00C59E53 /* ShIMU.cpp in Sources */,
 				7BCB9AF41F8771F1008EAFFF /* ErrorLog.cpp in Sources */,

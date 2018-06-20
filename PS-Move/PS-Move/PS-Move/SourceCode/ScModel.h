@@ -30,7 +30,10 @@ private:
 	// Private functions
 	
 	// Private members
-	SgNode						   *m_pCube;
+	SgNode						   *m_pCube1;
+    SgNode                         *m_pCube2;
+    SgNode                         *m_pCube3;
+
 	RsShader					   *m_pShader;
     MtSphere                        m_sphere;
 };

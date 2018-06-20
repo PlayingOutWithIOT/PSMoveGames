@@ -21,12 +21,14 @@
 // Bring in our game
 #include "itsabomb.hpp"
 #include "testControllers.hpp"
+#include "skipping.hpp"
 
 // Define our games
 ItsABombGame itsABombGame;
 TestControllers testControllers;
-MoveGame *pGame = &itsABombGame;
-//MoveGame *pGame = &testControllers;
+Skipping skipping;
+//MoveGame *pGame = &itsABombGame;
+MoveGame *pGame = &skipping;
 
 #define SUPPORT_RETINA_RESOLUTION 1
 
