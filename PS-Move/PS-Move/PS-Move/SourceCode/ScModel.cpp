@@ -119,8 +119,10 @@ void ScModel::Render( RsCamera &camera )
     {
         m_pCube3->Render();
     }
-    //MtVector2 v2Position( 0, 0 );
-    //BtChar text[32];
-    //sprintf( text, "Hello World!" );
-    //HlFont::Render(v2Position, text, RsColour::BlackColour(), MaxSortOrders - 1);
+    
+    MtVector3 v3Acc = ShIMU::GetAccelerometer(0);
+    BtChar text[32];
+    MtVector2 v2Position( 0, 0 );
+    sprintf( text, "%.2f %.2f %.2f", v3Acc.x, v3Acc.y, v3Acc.z );
+    HlFont::Render(v2Position, text, RsColour::BlackColour(), MaxSortOrders - 1);
 }

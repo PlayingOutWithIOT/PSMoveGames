@@ -17,6 +17,9 @@
 #include "MadgwickAHRS.h"
 Madgwick madgwick[3];
 
+BtBool jump = BtFalse;
+BtBool battery[3];
+
 void Skipping::setup()
 {
     numControllers = psmove_count_connected();
@@ -35,6 +38,8 @@ void Skipping::setup()
         
         // Set the lights to 0
         psmove_set_leds( moveArr[i], 0, 0, 0 );
+        
+        battery[i] = BtFalse;
     }
     reset();
 }
@@ -61,12 +66,6 @@ void Skipping::reset()
 #endif
 }
 
-BtBool jump = BtFalse;
-BtFloat avHeight[3];
-BtFloat minHeight[3];
-BtFloat maxHeight[3];
-BtFloat currHeight[3];
-
 void Skipping::update()
 {
     jump = BtFalse;
@@ -82,6 +81,8 @@ void Skipping::update()
             BtFloat fax, fay, faz;
             BtFloat fgx, fgy, fgz;
          
+            BtFloat tick = 1.0f / BtTime::GetTick();
+            (void)tick;
             for( BtU32 j=0; j<2; j++ )
             {
                 PSMove_Frame frame = (PSMove_Frame)j;
@@ -119,43 +120,6 @@ void Skipping::update()
                     a++;
                 }
             }
-            else
-            {
-                // Only do the accelerometers checks once our buffer is full
-                if( rope[i].height.IsRoom() == BtFalse )
-                {
-                    // Pop the oldest
-                    rope[i].height.Pop();
-                }
-                
-                // Push the latest reading
-                rope[i].height.Push( v3Grav.z );
- 
-                // Set the current height
-                currHeight[i] = v3Grav.z;
-                
-                // Get the averaged sampled height
-                {
-                    BtFloat maxLength = 0;
-                    BtU32 numReadings = rope[i].height.GetItemCount();
-                    
-                    if( numReadings )
-                    {
-                        maxHeight[i] = rope[i].height.Peek(0);
-                        maxLength += rope[i].height.Peek(0);
-                        
-                        for( BtU32 r=1; r<numReadings; r++ )
-                        {
-                            BtFloat currHeight = rope[i].height.Peek(r);
-                            maxLength += currHeight;
-                            maxHeight[i] = MtMax( maxHeight[i], currHeight );
-                        }
-                    }
-                    
-                    // Calculate the average amplitude of the movement
-                    avHeight[i] = maxLength / numReadings;
-                }
-            }
         }
     }
     
@@ -166,11 +130,9 @@ void Skipping::update()
     {
         down[i] = BtFalse;
         
-        MtMatrix4 m4Transform( ShIMU::GetQuaternion(i) );
+        MtVector3 v3Acc = ShIMU::GetAccelerometer(i);
         
-        MtVector3 zaxis = (MtVector3( 0, 0, 1 ) * m4Transform );
-        
-        if( zaxis.y < 0 )
+        if( v3Acc.y < 0 )
         {
             down[i] = BtTrue;
         }
@@ -192,14 +154,19 @@ void Skipping::update()
     else{
         count = 0;
     }
-    if( down[2] && !jump )
+    
+    if( numControllers == 3 )
     {
-        count++;
+        if( down[2] && !jump )
+        {
+            count++;
+        }
+        else{
+            count = 0;
+        }
     }
-    else{
-        count = 0;
-    }
-    if( count > 10 )
+    
+    if( count > 20 )
     {
         bad = BtTrue;
     }
@@ -208,33 +175,6 @@ void Skipping::update()
     for( BtU32 i=0; i<numControllers; i++ )
     {
         PSMove *move = moveArr[i];
-        
-        // Setup the skipping rope
-        if( i == 0 )
-        {
-            psmove_set_leds( move, 0, 255, 255 );
-            if( down[i] )
-            {
-                psmove_set_leds( move, 0, 255, 0 );
-            }
-        }
-        if( i == 1 )
-        {
-            psmove_set_leds( move, 0, 0, 255 );
-            
-            if( bad )
-            {
-                psmove_set_leds( move, 255, 0, 0 );
-            }
-        }
-        if( i == 2 )
-        {
-            psmove_set_leds( move, 0, 255, 255 );
-            if( down[i] )
-            {
-                psmove_set_leds( move, 0, 255, 0 );
-            }
-        }
         
         // Respond to the buttons
         unsigned int pressed, released;
@@ -271,10 +211,42 @@ void Skipping::update()
                     psmove_set_leds( move, 255, 255, 255 );
                 break;
             }
+            battery[i] = BtTrue;
         }
         if( released )
         {
             psmove_set_leds( move, 0, 0, 0 );
+            battery[i] = BtFalse;
+        }
+        
+        if( battery[i] == BtFalse )
+        {
+            // Setup the skipping rope
+            if( i == 0 )
+            {
+                psmove_set_leds( move, 0, 255, 255 );
+                if( down[i] )
+                {
+                    psmove_set_leds( move, 0, 255, 0 );
+                }
+            }
+            if( i == 1 )
+            {
+                psmove_set_leds( move, 0, 0, 255 );
+                
+                if( bad )
+                {
+                    psmove_set_leds( move, 255, 0, 0 );
+                }
+            }
+            if( i == 2 )
+            {
+                psmove_set_leds( move, 0, 255, 255 );
+                if( down[i] )
+                {
+                    psmove_set_leds( move, 0, 255, 0 );
+                }
+            }
         }
         
         // Update any changes to the lights
