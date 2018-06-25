@@ -1,0 +1,364 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7B6017661AE2A908001336CB /* psmovepair.c in Sources */ = {isa = PBXBuildFile; fileRef = 7B6017651AE2A908001336CB /* psmovepair.c */; };
+		7BBC89271A83942800B2DFA1 /* moved_client.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BBC88FA1A83942800B2DFA1 /* moved_client.c */; };
+		7BBC89281A83942800B2DFA1 /* moved_monitor.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BBC88FC1A83942800B2DFA1 /* moved_monitor.c */; };
+		7BBC892A1A83942800B2DFA1 /* psmove_osxsupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BBC89031A83942800B2DFA1 /* psmove_osxsupport.m */; };
+		7BBC892C1A83942800B2DFA1 /* psmove.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BBC89061A83942800B2DFA1 /* psmove.c */; };
+		7BBC892D1A83942800B2DFA1 /* psmove_calibration.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BBC89071A83942800B2DFA1 /* psmove_calibration.c */; };
+		7BBC892E1A83942800B2DFA1 /* psmove_orientation.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BBC89091A83942800B2DFA1 /* psmove_orientation.c */; };
+		7BBC89461A8397C700B2DFA1 /* hid.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BBC89451A8397C700B2DFA1 /* hid.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7BBC88D01A83880600B2DFA1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		7B6017651AE2A908001336CB /* psmovepair.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = psmovepair.c; sourceTree = "<group>"; };
+		7BBC88D21A83880600B2DFA1 /* psmovepair */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = psmovepair; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BBC88FA1A83942800B2DFA1 /* moved_client.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = moved_client.c; sourceTree = "<group>"; };
+		7BBC88FB1A83942800B2DFA1 /* moved_client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = moved_client.h; sourceTree = "<group>"; };
+		7BBC88FC1A83942800B2DFA1 /* moved_monitor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = moved_monitor.c; sourceTree = "<group>"; };
+		7BBC88FD1A83942800B2DFA1 /* moved_monitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = moved_monitor.h; sourceTree = "<group>"; };
+		7BBC88FE1A83942800B2DFA1 /* psmove_moved_protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = psmove_moved_protocol.h; sourceTree = "<group>"; };
+		7BBC89021A83942800B2DFA1 /* psmove_osxsupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = psmove_osxsupport.h; sourceTree = "<group>"; };
+		7BBC89031A83942800B2DFA1 /* psmove_osxsupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = psmove_osxsupport.m; sourceTree = "<group>"; };
+		7BBC89061A83942800B2DFA1 /* psmove.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = psmove.c; sourceTree = "<group>"; };
+		7BBC89071A83942800B2DFA1 /* psmove_calibration.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = psmove_calibration.c; sourceTree = "<group>"; };
+		7BBC89081A83942800B2DFA1 /* psmove_calibration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = psmove_calibration.h; sourceTree = "<group>"; };
+		7BBC89091A83942800B2DFA1 /* psmove_orientation.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = psmove_orientation.c; sourceTree = "<group>"; };
+		7BBC890A1A83942800B2DFA1 /* psmove_orientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = psmove_orientation.h; sourceTree = "<group>"; };
+		7BBC890B1A83942800B2DFA1 /* psmove_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = psmove_private.h; sourceTree = "<group>"; };
+		7BBC89441A8397AF00B2DFA1 /* hidapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hidapi.h; path = "../hidapi-master/hidapi/hidapi.h"; sourceTree = "<group>"; };
+		7BBC89451A8397C700B2DFA1 /* hid.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = hid.c; path = "../hidapi-master/mac/hid.c"; sourceTree = "<group>"; };
+		7BBC89481A83984800B2DFA1 /* psmove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = psmove.h; path = "../psmoveapi-master/include/psmove.h"; sourceTree = "<group>"; };
+		7BBC89491A83992100B2DFA1 /* psmove_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = psmove_config.h; path = "../psmoveapi-master/include/psmove_config.h"; sourceTree = "<group>"; };
+		7BBD532D1AE1B6D3003EB79C /* psmove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = psmove.h; sourceTree = "<group>"; };
+		7BBD532E1AE1B6D3003EB79C /* psmove_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = psmove_config.h; sourceTree = "<group>"; };
+		7BBD532F1AE1B6D3003EB79C /* psmove_config.h.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = psmove_config.h.in; sourceTree = "<group>"; };
+		7BBD53301AE1B6D3003EB79C /* psmove_fusion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = psmove_fusion.h; sourceTree = "<group>"; };
+		7BBD53311AE1B6D3003EB79C /* psmove_tracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = psmove_tracker.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7BBC88CF1A83880600B2DFA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7BBC88C91A83880600B2DFA1 = {
+			isa = PBXGroup;
+			children = (
+				7BBD532C1AE1B6D3003EB79C /* include */,
+				7BBC89411A83979200B2DFA1 /* hidapi */,
+				7BBC88F71A8393AC00B2DFA1 /* psmoveapi */,
+				7BBC88D41A83880600B2DFA1 /* psmovepair */,
+				7BBC88D31A83880600B2DFA1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7BBC88D31A83880600B2DFA1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7BBC88D21A83880600B2DFA1 /* psmovepair */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7BBC88D41A83880600B2DFA1 /* psmovepair */ = {
+			isa = PBXGroup;
+			children = (
+				7B6017651AE2A908001336CB /* psmovepair.c */,
+			);
+			path = psmovepair;
+			sourceTree = "<group>";
+		};
+		7BBC88F71A8393AC00B2DFA1 /* psmoveapi */ = {
+			isa = PBXGroup;
+			children = (
+				7BBC89471A83982900B2DFA1 /* includes */,
+				7BBC88F81A83942800B2DFA1 /* src */,
+			);
+			name = psmoveapi;
+			sourceTree = "<group>";
+		};
+		7BBC88F81A83942800B2DFA1 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				7BBC88F91A83942800B2DFA1 /* daemon */,
+				7BBC88FF1A83942800B2DFA1 /* platform */,
+				7BBC89061A83942800B2DFA1 /* psmove.c */,
+				7BBC89071A83942800B2DFA1 /* psmove_calibration.c */,
+				7BBC89081A83942800B2DFA1 /* psmove_calibration.h */,
+				7BBC89091A83942800B2DFA1 /* psmove_orientation.c */,
+				7BBC890A1A83942800B2DFA1 /* psmove_orientation.h */,
+				7BBC890B1A83942800B2DFA1 /* psmove_private.h */,
+			);
+			name = src;
+			path = "../psmoveapi-master/src";
+			sourceTree = "<group>";
+		};
+		7BBC88F91A83942800B2DFA1 /* daemon */ = {
+			isa = PBXGroup;
+			children = (
+				7BBC88FA1A83942800B2DFA1 /* moved_client.c */,
+				7BBC88FB1A83942800B2DFA1 /* moved_client.h */,
+				7BBC88FC1A83942800B2DFA1 /* moved_monitor.c */,
+				7BBC88FD1A83942800B2DFA1 /* moved_monitor.h */,
+				7BBC88FE1A83942800B2DFA1 /* psmove_moved_protocol.h */,
+			);
+			path = daemon;
+			sourceTree = "<group>";
+		};
+		7BBC88FF1A83942800B2DFA1 /* platform */ = {
+			isa = PBXGroup;
+			children = (
+				7BBC89021A83942800B2DFA1 /* psmove_osxsupport.h */,
+				7BBC89031A83942800B2DFA1 /* psmove_osxsupport.m */,
+			);
+			path = platform;
+			sourceTree = "<group>";
+		};
+		7BBC89411A83979200B2DFA1 /* hidapi */ = {
+			isa = PBXGroup;
+			children = (
+				7BBC89451A8397C700B2DFA1 /* hid.c */,
+				7BBC89441A8397AF00B2DFA1 /* hidapi.h */,
+			);
+			name = hidapi;
+			sourceTree = "<group>";
+		};
+		7BBC89471A83982900B2DFA1 /* includes */ = {
+			isa = PBXGroup;
+			children = (
+				7BBC89491A83992100B2DFA1 /* psmove_config.h */,
+				7BBC89481A83984800B2DFA1 /* psmove.h */,
+			);
+			name = includes;
+			sourceTree = "<group>";
+		};
+		7BBD532C1AE1B6D3003EB79C /* include */ = {
+			isa = PBXGroup;
+			children = (
+				7BBD532D1AE1B6D3003EB79C /* psmove.h */,
+				7BBD532E1AE1B6D3003EB79C /* psmove_config.h */,
+				7BBD532F1AE1B6D3003EB79C /* psmove_config.h.in */,
+				7BBD53301AE1B6D3003EB79C /* psmove_fusion.h */,
+				7BBD53311AE1B6D3003EB79C /* psmove_tracker.h */,
+			);
+			name = include;
+			path = "../psmoveapi-master/include";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7BBC88D11A83880600B2DFA1 /* psmovepair */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7BBC88D91A83880600B2DFA1 /* Build configuration list for PBXNativeTarget "psmovepair" */;
+			buildPhases = (
+				7BBC88CE1A83880600B2DFA1 /* Sources */,
+				7BBC88CF1A83880600B2DFA1 /* Frameworks */,
+				7BBC88D01A83880600B2DFA1 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = psmovepair;
+			productName = psmovepair;
+			productReference = 7BBC88D21A83880600B2DFA1 /* psmovepair */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7BBC88CA1A83880600B2DFA1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = localadmin;
+				TargetAttributes = {
+					7BBC88D11A83880600B2DFA1 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 7BBC88CD1A83880600B2DFA1 /* Build configuration list for PBXProject "psmovepair" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7BBC88C91A83880600B2DFA1;
+			productRefGroup = 7BBC88D31A83880600B2DFA1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7BBC88D11A83880600B2DFA1 /* psmovepair */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7BBC88CE1A83880600B2DFA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BBC892A1A83942800B2DFA1 /* psmove_osxsupport.m in Sources */,
+				7BBC892C1A83942800B2DFA1 /* psmove.c in Sources */,
+				7BBC892E1A83942800B2DFA1 /* psmove_orientation.c in Sources */,
+				7BBC89281A83942800B2DFA1 /* moved_monitor.c in Sources */,
+				7BBC89271A83942800B2DFA1 /* moved_client.c in Sources */,
+				7BBC892D1A83942800B2DFA1 /* psmove_calibration.c in Sources */,
+				7B6017661AE2A908001336CB /* psmovepair.c in Sources */,
+				7BBC89461A8397C700B2DFA1 /* hid.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7BBC88D71A83880600B2DFA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7BBC88D81A83880600B2DFA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		7BBC88DA1A83880600B2DFA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/localadmin/Documents/psmoveapi_3.0.0_osx108/opt/psmoveapi_3.0.0/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7BBC88DB1A83880600B2DFA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/localadmin/Documents/psmoveapi_3.0.0_osx108/opt/psmoveapi_3.0.0/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7BBC88CD1A83880600B2DFA1 /* Build configuration list for PBXProject "psmovepair" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7BBC88D71A83880600B2DFA1 /* Debug */,
+				7BBC88D81A83880600B2DFA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7BBC88D91A83880600B2DFA1 /* Build configuration list for PBXNativeTarget "psmovepair" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7BBC88DA1A83880600B2DFA1 /* Debug */,
+				7BBC88DB1A83880600B2DFA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7BBC88CA1A83880600B2DFA1 /* Project object */;
+}

@@ -57,6 +57,7 @@ void ScModel::Update( RsCamera &camera )
 	{
         MtVector3 v3Position = ShIMU::GetPosition(0);
         v3Position += MtVector3( -10.0f, 0, 10.0f );
+        v3Position = MtVector3( 0, 0, 0 );
         m4Translate.SetTranslation( v3Position );
 
         MtQuaternion quaternion = ShIMU::GetQuaternion(0);

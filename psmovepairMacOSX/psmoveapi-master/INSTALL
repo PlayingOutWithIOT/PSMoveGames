@@ -1,0 +1,17 @@
+
+The hidapi library is imported as Git submodule:
+
+    git submodule init
+    git submodule update
+
+Building:
+
+    mkdir build
+    cd build
+    cmake ..
+    make
+
+Installing:
+
+    make install
+
