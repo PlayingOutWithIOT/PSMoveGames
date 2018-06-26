@@ -31,9 +31,9 @@
 #define PSMOVE_CONFIG_H
 
 /* This file is auto-generated from psmove_config.h.in by CMake */
-
-#cmakedefine PSMOVE_BUILD_TRACKER
-#cmakedefine PSMOVE_USE_PSEYE
-#cmakedefine PSMOVE_USE_TRACKER_TRACE
+// Commented out these because they dont build
+// #define PSMOVE_BUILD_TRACKER
+// #define PSMOVE_USE_PSEYE
+// #undef PSMOVE_USE_TRACKER_TRACE */
 
 #endif
